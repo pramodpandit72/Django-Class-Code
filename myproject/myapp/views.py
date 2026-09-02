@@ -380,3 +380,11 @@ def food_category(request, category, subcategory):
     if not subcategory:
         return HttpResponse(f'You have choosen category: {category} and You have choosen subcategory: not specified')
     return HttpResponse(f'You have choosen category: {category} and  You have choosen subcategory: {subcategory}')
+
+
+# Error Handling
+# Simulate Error 500 (server error)
+def dividebyzero(request):
+    a = 10
+    result = a/0
+    return HttpResponse(result)

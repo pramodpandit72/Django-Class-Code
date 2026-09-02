@@ -79,4 +79,7 @@ urlpatterns = [
     # re_path(r'^restaurant1/(?P<category>[a-zA-Z0-9]+)/(?P<subcategory>[\w \s]*)/?$', views.food_category),
 
     # re_path(r'^blog(?:/(?P<post_slug>[\w-]+))*/$', views.blog_details),
+
+
+    path('dividebyzero/',views.dividebyzero),
 ]
