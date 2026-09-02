@@ -395,3 +395,12 @@ def dividebyzero(request):
 def mytemplate(request):
     data={'name': "Ankit"}
     return render(request, 'test.html', data)
+
+def fooddata(request):
+    newmenu=[
+        {'name':'Noodles', 'price':40},
+        {'name':'Pizza', 'price':100},
+        {'name':'Bread', 'price':'free'},
+    ]
+
+    return render(request, 'menu.html', {'menu': newmenu})
