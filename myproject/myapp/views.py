@@ -388,3 +388,10 @@ def dividebyzero(request):
     a = 10
     result = a/0
     return HttpResponse(result)
+
+
+# ----------------- Templates ----------------------
+
+def mytemplate(request):
+    data={'name': "Ankit"}
+    return render(request, 'test.html', data)

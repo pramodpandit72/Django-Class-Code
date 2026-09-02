@@ -80,6 +80,8 @@ urlpatterns = [
 
     # re_path(r'^blog(?:/(?P<post_slug>[\w-]+))*/$', views.blog_details),
 
-
     path('dividebyzero/',views.dividebyzero),
+
+    # -------------- Templates --------------
+    path('test/', views.mytemplate),
 ]
