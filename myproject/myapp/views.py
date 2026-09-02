@@ -382,7 +382,7 @@ def food_category(request, category, subcategory):
     return HttpResponse(f'You have choosen category: {category} and  You have choosen subcategory: {subcategory}')
 
 
-# Error Handling
+# ---------------------- Error Handling ---------------------------------
 # Simulate Error 500 (server error)
 def dividebyzero(request):
     a = 10
