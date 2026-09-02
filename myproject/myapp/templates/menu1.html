@@ -1,0 +1,14 @@
+<table border="4">
+
+    {% for item in mains %}
+    {% if item.price == 'free' %}
+
+    <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+    </tr>
+
+    {% endif %}
+    {% endfor %}
+
+</table>

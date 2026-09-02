@@ -1,0 +1,19 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+db.sqlite3
+
+# Virtual environment files in this workspace
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+
+# Local/editor files
+.env
+.venv/
+venv/
+.dist/
+.vscode/
+.idea/
