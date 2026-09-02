@@ -22,3 +22,5 @@ urlpatterns = [
     path('', include('myapp.urls')),
 ]
 handler404 = 'myproject.views.handler404'
+
+handler500 = 'myproject.views.handler500'
