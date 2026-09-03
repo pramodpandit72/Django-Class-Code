@@ -41,7 +41,6 @@ You have choosen subcategory: not specified
         {'name':'Pizza', 'price':100},
         {'name':'Bread', 'price':'free'},
     ]
-
 Render the intems as an html table in the template using DTL. Also, The background color of the free items should pink
 
 
@@ -51,6 +50,4 @@ Render the intems as an html table in the template using DTL. Also, The backgrou
         {'name':'Pizza', 'price':100},
         {'name':'Bread', 'price':'free'},
     ]
-
 The user must be able to pass the URL parameter as item_name and fetch the information os the specified item name
-

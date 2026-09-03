@@ -411,5 +411,6 @@ def fooddata1(request, item_name):
         {'name':'Pizza', 'price':100},
         {'name':'Bread', 'price':'free'},
     ]
+    
 
     return render(request, 'menu3.html', {'menu': newmenu, 'item_name': item_name})

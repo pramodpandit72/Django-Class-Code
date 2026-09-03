@@ -88,5 +88,5 @@ urlpatterns = [
     # -------------- Templates --------------
     path('test/', views.mytemplate),
     path('fooddata/', views.fooddata),
-    path('fooddata1/', views.fooddata1),
+    path('fooddata1/<str:item_name>/', views.fooddata1, name='fooddata1'),
 ]
