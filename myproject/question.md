@@ -33,3 +33,24 @@ localhost:8000/menu/chinese/noodles
 
 You have choosen category: chinese
 You have choosen subcategory: not specified
+
+
+# Create a function that creates a list of dictionaries having food items with keys as "name" and "price".
+ newmenu=[
+        {'name':'Noodles', 'price':40},
+        {'name':'Pizza', 'price':100},
+        {'name':'Bread', 'price':'free'},
+    ]
+
+Render the intems as an html table in the template using DTL. Also, The background color of the free items should pink
+
+
+# Create a function that creates a list of dictionaries having food items with keys as "name" and "price".
+ newmenu=[
+        {'name':'Noodles', 'price':40},
+        {'name':'Pizza', 'price':100},
+        {'name':'Bread', 'price':'free'},
+    ]
+
+The user must be able to pass the URL parameter as item_name and fetch the information os the specified item name
+

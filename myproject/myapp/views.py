@@ -403,4 +403,13 @@ def fooddata(request):
         {'name':'Bread', 'price':'free'},
     ]
 
-    return render(request, 'menu.html', {'menu': newmenu})
+    return render(request, 'menu2.html', {'menu': newmenu})
+
+def fooddata1(request, item_name):
+    newmenu=[
+        {'name':'Noodles', 'price':40},
+        {'name':'Pizza', 'price':100},
+        {'name':'Bread', 'price':'free'},
+    ]
+
+    return render(request, 'menu3.html', {'menu': newmenu, 'item_name': item_name})

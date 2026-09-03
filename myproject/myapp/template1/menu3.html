@@ -1,0 +1,20 @@
+
+<table border="4">
+    <tr>
+       <th>Food Item</th>
+       <th>Price</th>
+    </tr>
+
+    {% for item in menu %}
+    {% if item.name == item_name %}
+
+    <p>{{item.name}} : {{item.price}}</p>
+
+    {% else %}
+    <p style="background-color: red;"> Item is not available </p>
+
+    {% endif %}
+    {% endfor %}
+
+</table>
+

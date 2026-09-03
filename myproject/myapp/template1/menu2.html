@@ -1,0 +1,35 @@
+<!-- 
+<table border="4">
+    <tr>
+       <th>Food Item</th>
+       <th>Price</th>
+    </tr>
+
+    {% for item in menu %}
+    {% if item.price != 'free' %} 
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+    </tr>
+
+    {% endif %} 
+    {% endfor %}
+
+</table -->
+
+
+<table border="4">
+    <tr>
+       <th>Food Item</th>
+       <th>Price</th>
+    </tr>
+
+    {% for item in menu %}
+    <tr {% if item.price == 'free' %} style="background-color: pink;" {% endif %}>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+

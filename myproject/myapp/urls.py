@@ -43,6 +43,9 @@ urlpatterns = [
     path('about2/', views.about2, name='about2'),
     path('menuitems2/', views.menuitems2, name='menuitems'),
 
+
+    
+
     # ----------------------- Class Code ----------------------------
     path('newdetails/', views.newdetails),
     path('percent/', views.percent),
@@ -85,4 +88,5 @@ urlpatterns = [
     # -------------- Templates --------------
     path('test/', views.mytemplate),
     path('fooddata/', views.fooddata),
+    path('fooddata1/', views.fooddata1),
 ]
