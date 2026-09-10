@@ -150,6 +150,12 @@ def about2(request):
 def menuitems2(request):
     return render(request, 'menuitems.html')
 
+
+
+
+
+
+
 # ------------------ Class Code -----------------------
 def details(request):
     name = "Ankit"
@@ -414,3 +420,33 @@ def fooddata1(request, item_name):
     
 
     return render(request, 'menu3.html', {'menu': newmenu, 'item_name': item_name})
+
+def testimage(request):
+    return render(request, 'testimage.html')
+
+def productlist(request):
+    products=[
+        {'name':'smartphone', 'brand':'Samsung', 'price': 45000, 'image': 'images.jpeg'},
+        {'name':'laptop', 'brand':'Dell', 'price': 100000, 'image': 'images1.jpeg'},
+        {'name':'headphone', 'brand':'Boat', 'price': 50000, 'image': 'images2.jpeg'}
+    ]
+
+    return render(request, 'products.html', {'product_list': products})
+
+def shopingList(request):
+    products=[
+        {'name':'smartphone', 'brand':'Samsung', 'price': 45000, 'image': 'images.jpeg'},
+        {'name':'laptop', 'brand':'Dell', 'price': 100000, 'image': 'images1.jpeg'},
+        {'name':'headphone', 'brand':'Boat', 'price': 50000, 'image': 'images2.jpeg'}
+    ]
+
+    return render(request, 'shoping.html', {'product_list': products})
+
+def shopingDetail(request, shopingItem):
+    products=[
+        {'name':'smartphone', 'brand':'Samsung', 'price': 45000, 'image': 'images.jpeg'},
+        {'name':'laptop', 'brand':'Dell', 'price': 100000, 'image': 'images1.jpeg'},
+        {'name':'headphone', 'brand':'Boat', 'price': 50000, 'image': 'images2.jpeg'}
+    ]
+
+    return render(request, 'shopingDetail.html', {'product_list': products, 'shoping_item':shopingItem})

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Data</title> <style>
+        body {
+            display: flex;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    
+    {% for item in product_list %}
+    <p>{{item.name}}</p>
+    <p>{{item.brand}}</p>
+    <p>{{item.price}}</p>
+    <img src="{% static item.image %}" height="100" width="100">
+    {% endfor %}
+</body>
+</html>

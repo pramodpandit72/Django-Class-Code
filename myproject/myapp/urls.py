@@ -89,4 +89,7 @@ urlpatterns = [
     path('test/', views.mytemplate),
     path('fooddata/', views.fooddata),
     path('fooddata1/<str:item_name>/', views.fooddata1, name='fooddata1'),
+    path('testimage/', views.testimage),
+    path('shopingList/', views.shopingList),
+    path('shopingDetail/<str:shopingItem>/', views.shopingDetail, name='shopingDetail'),
 ]
