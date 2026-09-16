@@ -92,4 +92,10 @@ urlpatterns = [
     path('testimage/', views.testimage),
     path('shopingList/', views.shopingList),
     path('shopingDetail/<str:shopingItem>/', views.shopingDetail, name='shopingDetail'),
+
+    path('greet/<str:name>/<str:time_of_day>/', views.greeting),
+
+    path("departments/", views.departments),  # http://127.0.0.1:8000/departments/
+    path("department/<str:department_name>/", views.department_detail), # http://127.0.0.1:8000/department/Computer%20Science/
+
 ]

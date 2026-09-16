@@ -450,3 +450,56 @@ def shopingDetail(request, shopingItem):
     ]
 
     return render(request, 'shopingDetail.html', {'product_list': products, 'shoping_item':shopingItem})
+
+
+def greeting(request, name, time_of_day):
+    # http://127.0.0.1:8000/greet/Rahul/evening/
+    if time_of_day == "morning":
+        message = f"Good Morning, {name}!"
+
+    elif time_of_day == "afternoon":
+        message = f"Good Afternoon, {name}!"
+
+    elif time_of_day == "evening":
+        message = f"Good Evening, {name}!"
+
+    else:
+        message = "Invalid Time of Day"
+
+    return render(request, "greeting.html", {"greeting": message})
+
+
+
+from django.shortcuts import render
+
+def departments(request):
+    department_list = [
+        "Computer Science",
+        "Information Technology",
+        "Mechanical Engineering",
+        "Civil Engineering",
+        "Electrical Engineering"
+    ]
+
+    return render(request, "departments.html", {
+        "departments": department_list
+    })
+
+
+def department_detail(request, department_name):
+    department_list = [
+        "Computer Science",
+        "Information Technology",
+        "Mechanical Engineering",
+        "Civil Engineering",
+        "Electrical Engineering"
+    ]
+
+    if department_name in department_list:
+        message = f"You selected: {department_name}"
+    else:
+        message = "Department Not Available"
+
+    return render(request, "department_detail.html", {
+        "message": message
+    })

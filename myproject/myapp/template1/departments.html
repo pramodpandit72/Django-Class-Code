@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>College Departments</h1>
+
+    {% for department in departments %}
+        <p>{{ forloop.counter }}. {{ department }}</p>
+    {% endfor %}
+
+    {% if departments|length > 3 %}
+        <p>Multiple departments are available</p>
+    {% else %}
+        <p>Limited departments are available</p>
+    {% endif %}
+
+</body>
+</html>
