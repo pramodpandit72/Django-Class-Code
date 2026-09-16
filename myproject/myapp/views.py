@@ -503,3 +503,19 @@ def department_detail(request, department_name):
     return render(request, "department_detail.html", {
         "message": message
     })
+
+
+
+# Template Inheritance 
+
+def home4(request):
+    return render(request, 'home4.html')
+def about4(request):
+    return render(request, 'about4.html')
+def food4(request):
+    newmenu=[
+            {'name':'Noodles', 'price':40, 'size':'medium', 'image': 'images.jpeg'},
+            {'name':'Pizza', 'price':100, 'size':'small', 'image': 'images1.jpeg'},
+            {'name':'Bread', 'price':'free', 'size':'large', 'image': 'images2.jpeg'},
+        ]
+    return render(request, 'food4.html', {'menu': newmenu})

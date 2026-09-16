@@ -98,4 +98,8 @@ urlpatterns = [
     path("departments/", views.departments),  # http://127.0.0.1:8000/departments/
     path("department/<str:department_name>/", views.department_detail), # http://127.0.0.1:8000/department/Computer%20Science/
 
+    # Template Inheritance
+    path('home4/', views.home4, name='home4'),
+    path('about4/', views.about4, name='about4'),
+    path('food4/', views.food4, name='food4'),
 ]

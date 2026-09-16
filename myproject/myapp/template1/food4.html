@@ -1,0 +1,40 @@
+{% extends 'base4.html'%}
+{% block title %}
+
+Food Page
+{% endblock %}
+{% block css %}
+
+p{
+    color:orange;
+}
+
+{% endblock %}
+{% block content %}
+
+{% load static %}
+
+<table border="2" cellpadding="6" width="100%">
+    <thead>
+        <tr>
+            <th>Food Name</th>
+            <th>Price</th>
+            <th>Size</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in menu %}
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.size}}</td>
+            <td><img src="{% static item.image%}" height="50" width="50"></tr>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+
+{% endblock %}
