@@ -519,3 +519,24 @@ def food4(request):
             {'name':'Bread', 'price':'free', 'size':'large', 'image': 'images2.jpeg'},
         ]
     return render(request, 'food4.html', {'menu': newmenu})
+
+def testcss(request):
+    return render(request, 'testcss.html')
+
+def items(request):
+    products=[
+        {'name': 'laptop'},
+        {'name': 'smartphone'},
+        {'name': 'headphones'},
+    ]
+    return render(request, 'items.html', {'products': products})
+
+def itemdetails(request, name):
+    products={
+        'laptop':{'brand':'Dell', 'price':20000},
+        'smartphone':{'brand':'smasung', 'price':50000},
+        'headphone':{'brand':'Boat', 'price':70000},
+    }
+    item = products.get(name)
+    if item:
+        return render(request, 'itemdetails.html', {'name':name, 'brand':item['brand'], 'price':item['price']})

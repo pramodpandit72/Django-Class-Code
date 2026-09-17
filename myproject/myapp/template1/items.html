@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    {% load static %}
+
+    {% for p in products %}
+
+    <!-- <a href="{{ p.name }}">{{p.name}}</a> <br> -->
+     <a href="{% url 'shopingDetail' p.name %}">{{p.name}}</a> <br>
+
+    {% endfor %}
+  </body>
+</html>

@@ -102,4 +102,7 @@ urlpatterns = [
     path('home4/', views.home4, name='home4'),
     path('about4/', views.about4, name='about4'),
     path('food4/', views.food4, name='food4'),
+    path('testcss/',views.testcss),
+    path('items/',views.items),
+    path('items/<str:name>',views.itemdetails),
 ]
