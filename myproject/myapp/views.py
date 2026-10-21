@@ -684,4 +684,5 @@ def htmlform(request):
         password = request.POST.get('password')
         if name and email and password:
             return HttpResponse(f'Form submitted successfullly. The details are {name}, {email}, {password}')
-    return render(request, 'htmlform.html')
+    else:    
+        return render(request, 'htmlform.html')

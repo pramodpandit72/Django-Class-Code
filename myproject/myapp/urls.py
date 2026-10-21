@@ -127,9 +127,9 @@ urlpatterns = [
     path('simpleform/', views.simpleform),
     path('simpleform1/', views.simpleform1),
 
+    path('htmlform/', views.htmlform),
 
 
-    
 ]
 
 
