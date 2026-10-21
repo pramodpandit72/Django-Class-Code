@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validation and submission</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        Name: <input type="text" name="name"> <br>
+        Email: <input type="text" name="email"> <br>
+        Password: <input type="text" name="password"> <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

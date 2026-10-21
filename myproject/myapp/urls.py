@@ -105,4 +105,32 @@ urlpatterns = [
     path('testcss/',views.testcss),
     path('items/',views.items),
     path('items/<str:name>',views.itemdetails),
+
+
+# --------------------- CA ----------------------
+
+    path('canteen/', views.canteen),
+
+    path('canteen/category/<str:category>/', views.category),
+
+    re_path(r'^canteen/item/(?P<item_id>\d{3})/$', views.item),
+
+# -------------------- Class Code ---------------
+    path('sampletest/', views.sampletest, name='st'),
+    path('sampletest1/<int:id>', views.sampletest1, name='st1'),
+
+    path('old/', views.old),
+    path('new/', views.new),
+
+    # ----------- Form in Django -------------
+
+    path('simpleform/', views.simpleform),
+    path('simpleform1/', views.simpleform1),
+
+
+
+    
 ]
+
+
+

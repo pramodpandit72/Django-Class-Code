@@ -417,8 +417,6 @@ def fooddata1(request, item_name):
         {'name':'Pizza', 'price':100},
         {'name':'Bread', 'price':'free'},
     ]
-    
-
     return render(request, 'menu3.html', {'menu': newmenu, 'item_name': item_name})
 
 def testimage(request):
@@ -470,7 +468,6 @@ def greeting(request, name, time_of_day):
 
 
 
-from django.shortcuts import render
 
 def departments(request):
     department_list = [
@@ -540,3 +537,151 @@ def itemdetails(request, name):
     item = products.get(name)
     if item:
         return render(request, 'itemdetails.html', {'name':name, 'brand':item['brand'], 'price':item['price']})
+
+
+
+
+#  ----------- CA --------------
+
+
+def canteen(request):
+    Food = [
+        {'item_id': '101', 'name': 'Bread', 'category': 'Breakfast', 'price': 10, 'available': 'Yes'},
+        {'item_id': '102', 'name': 'Poha', 'category': 'Breakfast', 'price': 30, 'available': 'Yes'},
+        {'item_id': '103', 'name': 'Samosa', 'category': 'Lunch', 'price': 15, 'available': 'No'},
+        {'item_id': '104', 'name': 'Sandwich', 'category': 'Lunch', 'price': 50, 'available': 'Yes'},
+        {'item_id': '105', 'name': 'Thali', 'category': 'Dinner', 'price': 100, 'available': 'No'},
+        {'item_id': '106', 'name': 'Biryani', 'category': 'Dinner', 'price': 120, 'available': 'No'},
+        {'item_id': '107', 'name': 'Coffee', 'category': 'Snacks', 'price': 25, 'available': 'Yes'},
+        {'item_id': '108', 'name': 'Juice', 'category': 'Snacks', 'price': 40, 'available': 'No'},
+    ]
+    return render(request, 'canteen.html',{'Food':Food})
+
+def category(request, category):
+    Food = [
+        {'item_id': '101', 'name': 'Bread', 'category': 'Breakfast', 'price': 10, 'available': 'Yes'},
+        {'item_id': '102', 'name': 'Poha', 'category': 'Breakfast', 'price': 30, 'available': 'Yes'},
+        {'item_id': '103', 'name': 'Samosa', 'category': 'Lunch', 'price': 15, 'available': 'No'},
+        {'item_id': '104', 'name': 'Sandwich', 'category': 'Lunch', 'price': 50, 'available': 'Yes'},
+        {'item_id': '105', 'name': 'Thali', 'category': 'Dinner', 'price': 100, 'available': 'No'},
+        {'item_id': '106', 'name': 'Biryani', 'category': 'Dinner', 'price': 120, 'available': 'No'},
+        {'item_id': '107', 'name': 'Coffee', 'category': 'Snacks', 'price': 25, 'available': 'Yes'},
+        {'item_id': '108', 'name': 'Juice', 'category': 'Snacks', 'price': 40, 'available': 'No'},
+    ]
+
+    data = ""
+
+    for item in Food:
+
+        if item['category'] == category:
+
+            data += f"""
+            <h2>{item['name']}</h2>
+            <p>Item ID: {item['item_id']}</p>
+            <p>Category: {item['category']}</p>
+            <p>Price: {item['price']}</p>
+            <p>Availability: {item['available']}</p>
+            <hr>
+            """
+
+    if data == "":
+        return HttpResponse("No Items Available in This Category")
+
+    return HttpResponse(data)
+
+def item(request, item_id):
+    Food = [
+        {'item_id': '101', 'name': 'Bread', 'category': 'Breakfast', 'price': 10, 'available': 'Yes'},
+        {'item_id': '102', 'name': 'Poha', 'category': 'Breakfast', 'price': 30, 'available': 'Yes'},
+        {'item_id': '103', 'name': 'Samosa', 'category': 'Lunch', 'price': 15, 'available': 'No'},
+        {'item_id': '104', 'name': 'Sandwich', 'category': 'Lunch', 'price': 50, 'available': 'Yes'},
+        {'item_id': '105', 'name': 'Thali', 'category': 'Dinner', 'price': 100, 'available': 'No'},
+        {'item_id': '106', 'name': 'Biryani', 'category': 'Dinner', 'price': 120, 'available': 'No'},
+        {'item_id': '107', 'name': 'Coffee', 'category': 'Snacks', 'price': 25, 'available': 'Yes'},
+        {'item_id': '108', 'name': 'Juice', 'category': 'Snacks', 'price': 40, 'available': 'No'},
+    ]
+
+    for food in Food:
+
+        if food['item_id'] == item_id:
+
+            data = f"""
+            <h2>{food['name']}</h2>
+            <p>Item ID: {food['item_id']}</p>
+            <p>Category: {food['category']}</p>
+            <p>Price: {food['price']}</p>
+            <p>Availability: {food['available']}</p>
+            """
+
+            return HttpResponse(data)
+
+    return HttpResponse("Item Not Found")
+
+
+# --------------------------------------------------------------------------
+# Testing in Dajango
+
+def sampletest(request):
+    return HttpResponse('This is a smaple test page')
+
+def sampletest1(request, id):
+    return HttpResponse(f'The is is {id}')
+
+def new(request):
+    return HttpResponse('Some content')
+
+def old(request):
+    return redirect('/new/')
+
+
+# ---------- Forms in Django ---------------
+
+from django.views.decorators.csrf import csrf_exempt
+@csrf_exempt
+def simpleform(request):
+    if request.method == 'GET':
+        htmlform = """
+        <form method="Post">
+        <input type="text" name="textbox1"> <br>
+        <input type="text" name="textbox2"> <br>
+        <input type="submit">
+        </form>
+        """
+
+        return  HttpResponse(htmlform)
+
+    else:
+        t1 = request.POST.get("textbox1")
+        t2 = request.POST.get("textbox2")
+        return HttpResponse(f"The values are {t1} and {t2}")
+
+
+from django.middleware.csrf import get_token
+def simpleform1(request):
+    csrf_token = get_token(request)
+    # print(csrf_token)
+    if request.method == 'GET':
+        htmlform = f"""
+        <form method="Post">
+        <input type="hidden" name="csrfmiddlewaretoken" value={csrf_token}>
+        <input type="text" name="textbox1"> <br>
+        <input type="text" name="textbox2"> <br>
+        <input type="submit">
+        </form>
+        """
+
+        return  HttpResponse(htmlform)
+
+    else:
+        t1 = request.POST.get("textbox1")
+        t2 = request.POST.get("textbox2")
+        return HttpResponse(f"The values are {t1} and {t2}")
+
+def htmlform(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        if name and email and password:
+            return HttpResponse(f'Form submitted successfullly. The details are {name}, {email}, {password}')
+    return render(request, 'htmlform.html')

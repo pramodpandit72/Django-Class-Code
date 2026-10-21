@@ -51,3 +51,7 @@ Render the intems as an html table in the template using DTL. Also, The backgrou
         {'name':'Bread', 'price':'free'},
     ]
 The user must be able to pass the URL parameter as item_name and fetch the information os the specified item name
+
+
+
+Create a Django applination named canteen containing eight food items. Each item must contain item_id, name, category, price and available. Create /canteen/ to display all items and /canteen/category/<category>/ to display only itesms belonging to the requested category. Create /canteen/ item
