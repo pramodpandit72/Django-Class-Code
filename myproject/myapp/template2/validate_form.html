@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validation and submission</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        Name: <input type="text" name="name"> <br>
+        <span style="color:red">{{name_error}}</span> <br>
+        Email: <input type="text" name="email"> <br>
+        <span style="color:red">{{email_error}}</span> <br>
+        Password: <input type="password" name="password"> <br>
+        <span style="color:red">{{password_error}}</span> <br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if submitted_details %}
+    <h2>Submitted details:</h2>
+    Name: {{ submitted_details.name }}, 
+    Email: {{ submitted_details.email }}
+    {% endif %}
+</body>
+</html>

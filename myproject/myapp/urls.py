@@ -128,6 +128,7 @@ urlpatterns = [
     path('simpleform1/', views.simpleform1),
 
     path('htmlform/', views.htmlform),
+    path('validate/', views.validate),
 
 
 ]

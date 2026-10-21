@@ -684,5 +684,38 @@ def htmlform(request):
         password = request.POST.get('password')
         if name and email and password:
             return HttpResponse(f'Form submitted successfullly. The details are {name}, {email}, {password}')
+        else:
+            return HttpResponse(f'Fill all the Details')
     else:    
         return render(request, 'htmlform.html')
+
+
+
+def validate(request):
+    submitted_details = None
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        name_error = None
+        email_error = None
+        password_error = None
+
+        if not name:
+            name_error = "Name is required"
+        if not email:
+            email_error = "Email is required"
+        if not password or len(password) < 6:
+            password_error = "Password should be atleast 6 chars long"
+        if name_error or email_error or password_error:
+            return render(request, 'validate_form.html', {
+                'name':name,
+                'email':email,
+                'password':password,
+                'name_error':name_error,
+                'email_error':email_error,
+                'password_error':password_error
+            })
+        submitted_details = {'name':name, 'email':email, 'password':password}
+    return render(request, 'validate_form.html', {'submitted_details':submitted_details})
