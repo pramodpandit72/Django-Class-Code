@@ -719,3 +719,28 @@ def validate(request):
             })
         submitted_details = {'name':name, 'email':email, 'password':password}
     return render(request, 'validate_form.html', {'submitted_details':submitted_details})
+
+
+from .forms import InputForm1
+def from_submission(request):
+    if request.method == 'POST':
+        form = InputForm1(request.POST)
+        if form.is_valid():
+            return HttpResponse("Form submitted successfully")
+
+    form = InputForm1()
+    
+    return render(request, 'InputForm1.html',{'form': form})
+
+
+from  .forms import InputForm2
+def form_submission2(request):
+    submitted_details = None
+    if request.method == 'POST':
+        form = InputForm2(request.POST, request.FILES)
+        if form.is_valid():
+            submitted_details = form.cleaned_data
+    else:
+        form = InputForm2()
+    return render(request, 'InputForm2.html', {'form':form, 'submitted_details':submitted_details})
+

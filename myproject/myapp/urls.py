@@ -129,6 +129,10 @@ urlpatterns = [
 
     path('htmlform/', views.htmlform),
     path('validate/', views.validate),
+    path('from_submission/', views.from_submission),
+
+
+    # path('validate1/', views.form_submission2)
 
 
 ]
