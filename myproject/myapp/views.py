@@ -744,7 +744,7 @@ def form_submission2(request):
         form = InputForm2()
     return render(request, 'InputForm2.html', {'form':form, 'submitted_details':submitted_details})
 
-
+# ---------------- MODEL ---------------
 
 from .forms import Blogpostform
 

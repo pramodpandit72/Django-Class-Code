@@ -133,7 +133,7 @@ urlpatterns = [
 
     path('validate1/', views.form_submission2),
 
-    
+    path('insertblogpost/', views.insertblogpost),
 
 ]
 
