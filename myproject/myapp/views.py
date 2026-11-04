@@ -744,3 +744,17 @@ def form_submission2(request):
         form = InputForm2()
     return render(request, 'InputForm2.html', {'form':form, 'submitted_details':submitted_details})
 
+
+
+from .forms import Blogpostform
+
+def insertblogpost(request):
+    blog_created = False
+    if request.method == 'POST':
+        form = Blogpostform(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            blog_created = True
+    else:
+        form = Blogpostform()
+    return render(request, 'insertblogpost.html', {'form':form, 'blog_created':blog_created})

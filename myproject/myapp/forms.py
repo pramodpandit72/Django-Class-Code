@@ -25,4 +25,10 @@ class InputForm2(forms.Form):
     agree = forms.BooleanField
 
 
- 
+
+from .models import Blogpost
+
+class Blogpostform(forms.ModelForm):
+    class Meta:
+        model = Blogpost
+        fields = "__all__"
