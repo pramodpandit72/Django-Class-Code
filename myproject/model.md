@@ -6,7 +6,7 @@ after all this , table will be created we will use sqlite (install extension SQL
 
 
 
-
+> python -m pip install Pillow   
 
 
 
@@ -40,3 +40,18 @@ e.save()
 // to Delete
 e = Emp.objects.get(pk=1)
 e.delete()
+
+
+
+>>> from myapp.models import Author
+>>> author1 = Author.objects.create(name='J.K.Rowling', email='jk@gmail.com', description='very nice')
+>>> author2 = Author.objects.create(name='Stephen King', email='sk@gmail.com', description='too good')
+>>> from myapp.models import Books
+>>> Books.objects.create(title='HarrY Potter', author=author1, published_date='1998-10-29')
+
+
+
+
+
+#  python manage.py makemigrations  -> for creating migration
+#  python manage.py migrate    --> For creating table
