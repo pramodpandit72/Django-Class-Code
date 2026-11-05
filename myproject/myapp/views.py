@@ -767,3 +767,8 @@ def blogpost(request):
 def blogpost_detail(request,id):
     post = Blogpost.objects.get(id=id)
     return render(request, 'blogpost_details.html',{'post':post})
+
+def set_cookie(request):
+    response = HttpResponse("Cookie has been set")
+    response.set_cookie('name', 'Rahul', max_age=3000)
+    return response
