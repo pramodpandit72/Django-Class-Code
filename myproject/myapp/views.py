@@ -758,3 +758,8 @@ def insertblogpost(request):
     else:
         form = Blogpostform()
     return render(request, 'insertblogpost.html', {'form':form, 'blog_created':blog_created})
+
+from .models import Blogpost
+def blogpost(request):
+    posts = Blogpost.objects.all()
+    return render(request, 'blogposts.html', {'posts':posts})
