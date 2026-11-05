@@ -1,6 +1,12 @@
 {% for post in posts %}
-<h2>{{post.title}}</h2>
+<h2>
+    <a href="{% url 'b_d' post.id %}">
+        {{post.title}}
+    </a>
+</h2>
+
 {% if post.thumbnail %}
 <img src="{{post.thumbnail.url}}" height="50" weight="50">
 {% endif %}
+
 {% endfor %}

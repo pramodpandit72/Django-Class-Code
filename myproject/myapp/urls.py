@@ -134,7 +134,10 @@ urlpatterns = [
     path('validate1/', views.form_submission2),
 
     path('insertblogpost/', views.insertblogpost),
-    path('blogpost/', views.blogpost),
+    path('blogpost/', views.blogpost, name='b'),
+    path('blogpost_detail/<id>', views.blogpost_detail, name='b_d'),
+
+    
 ]
 
 
