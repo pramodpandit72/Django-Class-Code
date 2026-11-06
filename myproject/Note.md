@@ -17,3 +17,12 @@ python manage.py test
 HTTP from
 HTML form
 Django form
+
+
+
+
+
+#  python manage.py makemigrations  -> for creating migration
+#  python manage.py migrate    --> For creating table
+
+
