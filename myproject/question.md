@@ -55,3 +55,9 @@ The user must be able to pass the URL parameter as item_name and fetch the infor
 
 
 Create a Django applination named canteen containing eight food items. Each item must contain item_id, name, category, price and available. Create /canteen/ to display all items and /canteen/category/<category>/ to display only itesms belonging to the requested category. Create /canteen/ item
+
+
+
+Create three views names as cookieview1, cookieview2, cookieviews3 that set the cookie named "last_page"
+to values "Page1", "Page2", "Page3" respectively and also creste corresponding URLS for the same. Now create a view named LastVisitedPage and fetch the last visited page via cookie 
+and also create a corresponding URL for the same.
