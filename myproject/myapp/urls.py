@@ -140,9 +140,10 @@ urlpatterns = [
     path('set_cookie/', views.set_cookie),
     path('get_cookie/', views.get_cookie),
 
-    path('cookieview1/', views.cookieview1),
-    path('cookieview2/', views.cookieview2),
-    path('cookieview3/', views.cookieview3),
+    path('cookieview1/', views.cookieview1, name='cv1'),
+    path('cookieview2/', views.cookieview2, name='cv2'),
+    path('cookieview3/', views.cookieview3, name='cv3'),
+    path('lvp/', views.lastVisitedPage),
 ]
 
 

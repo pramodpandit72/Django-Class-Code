@@ -795,15 +795,21 @@ def get_cookie(request):
 
 def cookieview1(request):
     response = HttpResponse("Page1 cookie set")
-    response.set_cookie1('last_page', 'page1', max_age=60)
+    response.set_cookie('last_page', 'page1', max_age=60)
     return response
 
 def cookieview2(request):
     response = HttpResponse("Page2 cookie set")
-    response.set_cookie1('last_page', 'page2', max_age=60)
+    response.set_cookie('last_page', 'page2', max_age=60)
     return response
 
 def cookieview3(request):
     response = HttpResponse("Page3 cookie set")
-    response.set_cookie1('last_page', 'page3', max_age=60)
+    response.set_cookie('last_page', 'page3', max_age=60)
     return response
+
+def lastVisitedPage(request):
+    last_page = request.COOKIES.get('last_page', 'No recent visits found')
+    # return HttpResponse(f"Your last visited page is {last_page}")
+    return render(request, 'lvp.html', {'last_page':last_page})
+
