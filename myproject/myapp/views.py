@@ -768,7 +768,42 @@ def blogpost_detail(request,id):
     post = Blogpost.objects.get(id=id)
     return render(request, 'blogpost_details.html',{'post':post})
 
+# def set_cookie(request):
+#     response = HttpResponse("Cookie has been set")
+#     response.set_cookie('email', 'rahul@gmail.com', max_age=15)
+#     return response
+
+# def get_cookie(request):
+#     value = request.COOKIES.get('email')
+#     return HttpResponse(f'The cookie value is {value}')
+
+
 def set_cookie(request):
     response = HttpResponse("Cookie has been set")
-    response.set_cookie('name', 'Rahul', max_age=3000)
+    response.set_cookie('email', 'rahul@gmail.com', max_age=15)
+    response.set_cookie('username','Rahul')
+    return response
+
+def get_cookie(request):
+    value1 = request.COOKIES.get('email')
+    value2 = request.COOKIES.get('username')
+    if(value1 or value2):
+        return HttpResponse(f'The cookie value is {value1} and {value2}')
+    else:
+        return HttpResponse("Not even a single cookie is available")
+
+
+def cookieview1(request):
+    response = HttpResponse("Page1 cookie set")
+    response.set_cookie1('last_page', 'page1', max_age=60)
+    return response
+
+def cookieview2(request):
+    response = HttpResponse("Page2 cookie set")
+    response.set_cookie1('last_page', 'page2', max_age=60)
+    return response
+
+def cookieview3(request):
+    response = HttpResponse("Page3 cookie set")
+    response.set_cookie1('last_page', 'page3', max_age=60)
     return response

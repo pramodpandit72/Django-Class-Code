@@ -137,7 +137,12 @@ urlpatterns = [
     path('blogpost/', views.blogpost, name='b'),
     path('blogpost_detail/<id>', views.blogpost_detail, name='b_d'),
 
-    path('set_cookie/', views.set_cookie)
+    path('set_cookie/', views.set_cookie),
+    path('get_cookie/', views.get_cookie),
+
+    path('cookieview1/', views.cookieview1),
+    path('cookieview2/', views.cookieview2),
+    path('cookieview3/', views.cookieview3),
 ]
 
 
