@@ -816,12 +816,13 @@ def lastVisitedPage(request):
 def set_session(request):
     request.session['username'] = 'rahul'
     request.session['email'] = 'rahul@gmail.com'
+    request.session.set_expiry(10)
     return HttpResponse("Session aet successfully")
 
 def get_session(request):
     username = request.session.get('username','Guest')
-    email = request.sesssion.get('email', 'guest@gmail.com')
-    return HttpResponse(f'Welcome {username}({email}).')
+    email = request.session.get('email', 'guest@gmail.com')
+    return HttpResponse(f'Welcome {username} ({email}).')
 
 def delete_session(request):
     request.session.flush()

@@ -144,6 +144,10 @@ urlpatterns = [
     path('cookieview2/', views.cookieview2, name='cv2'),
     path('cookieview3/', views.cookieview3, name='cv3'),
     path('lvp/', views.lastVisitedPage),
+
+    path('set_session/', views.set_session),
+    path('get_session/', views.get_session),
+    path('delete_session/', views.delete_session),
 ]
 
 
