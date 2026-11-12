@@ -813,3 +813,16 @@ def lastVisitedPage(request):
     # return HttpResponse(f"Your last visited page is {last_page}")
     return render(request, 'lvp.html', {'last_page':last_page})
 
+def set_session(request):
+    request.session['username'] = 'rahul'
+    request.session['email'] = 'rahul@gmail.com'
+    return HttpResponse("Session aet successfully")
+
+def get_session(request):
+    username = request.session.get('username','Guest')
+    email = request.sesssion.get('email', 'guest@gmail.com')
+    return HttpResponse(f'Welcome {username}({email}).')
+
+def delete_session(request):
+    request.session.flush()
+    return HttpResponse("Session Destroyed Successfully")
