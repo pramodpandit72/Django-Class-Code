@@ -844,3 +844,7 @@ def dashboard(request):
     username = request.session['username']
     email = request.session['email']
     return render(request, 'dashboard.html', {'username':username, 'email':email})
+
+def logout(request):
+    request.session.flush()
+    return redirect('login')
