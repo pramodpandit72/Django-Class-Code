@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -827,3 +827,20 @@ def get_session(request):
 def delete_session(request):
     request.session.flush()
     return HttpResponse("Session Destroyed Successfully")
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        if username and email:
+            request.session['username'] = username
+            request.session['email'] = email
+            return redirect('dashboard')
+    return render(request, 'login.html')
+
+def dashboard(request):
+    if 'username' not in request.session:
+        return redirect('login')
+    username = request.session['username']
+    email = request.session['email']
+    return render(request, 'dashboard.html', {'username':username, 'email':email})
