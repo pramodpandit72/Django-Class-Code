@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register Form</title>
+</head>
+<body>
+    <h2>Create Account</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <h3>Account Details</h3>
+        {{ user_form.as_p }}
+        <h3>Customer Details</h3>
+        {{ customer_form.as_p}}
+        <button type="submit"> Create Account</button>
+    </form>
+    <p>
+        Already registered?
+        <a href="">Login</a>
+    </p>
+</body>
+</html>

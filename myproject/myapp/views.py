@@ -852,7 +852,7 @@ def logout(request):
 
 # --------------------- Auth --------------------
 
-from django.contrib.auth.form import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm
 from .forms import CustomerForm
 def register(request):
     if request.method == 'POST':
@@ -860,4 +860,11 @@ def register(request):
         customer_form = CustomerForm(request.POST)
         if user_form.is_valid() and customer_form.is_valid():
             user = user_form.save()
-            customer = customer_form.save()
+            customer = customer_form.save(commit=False)
+            customer.user = user
+            customer.save()
+            return HttpResponse("Account created successfully")
+    else:
+        user_form = UserCreationForm()
+        customer_form = CustomerForm()
+    return render(request, 'register.html', {'user_form':user_form, 'customer_form':customer_form})
