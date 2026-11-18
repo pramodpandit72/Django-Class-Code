@@ -848,3 +848,16 @@ def dashboard(request):
 def logout(request):
     request.session.flush()
     return redirect('login')
+
+
+# --------------------- Auth --------------------
+
+from django.contrib.auth.form import UserCreationForm
+from .forms import CustomerForm
+def register(request):
+    if request.method == 'POST':
+        user_form = UserCreationForm(request.POST)
+        customer_form = CustomerForm(request.POST)
+        if user_form.is_valid() and customer_form.is_valid():
+            user = user_form.save()
+            customer = customer_form.save()

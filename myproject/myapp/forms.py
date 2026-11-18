@@ -24,11 +24,16 @@ class InputForm2(forms.Form):
     website = forms.URLField(required = False)
     agree = forms.BooleanField
 
-
-
 from .models import Blogpost
 
 class Blogpostform(forms.ModelForm):
     class Meta:
         model = Blogpost
         fields = "__all__"
+
+
+from .models import Customer
+class CustomerForm(forms.ModelForm):
+    class Meta:
+            model = Customer
+            fields = ['phone', 'address']
