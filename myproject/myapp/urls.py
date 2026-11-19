@@ -153,6 +153,8 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('logout/', views.logout, name='logout'),
     path('register/', views.register, name='register'),
+
+    path('user_login/', views.user_login, name='user_login'),
 ]
 
 
