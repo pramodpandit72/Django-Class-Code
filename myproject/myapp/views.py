@@ -876,13 +876,23 @@ from .forms import LoginForm
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            user = authenticate(request, username = password, password = password)
+            user = authenticate(request, username = username, password = password)
             if user is not None:
                 login(request, user)
                 return redirect('dashboard1.html')
             else:
                 return HttpResponse("Authentication Failed")
+    else:
+        form = LoginForm()
+    return render(request, 'login-1.html', {'form':form})
+
+@login_required(login_url='user-login')
+def dashboard1(request):
+    return render(request, 'dashboard-1.html', {'user':request.user})
             
+def user_logout(request):
+    logout(request)
+    return redirect('login')
